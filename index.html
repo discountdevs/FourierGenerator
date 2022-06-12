@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fourier Generator</title>
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<py-env>
+  - numpy
+</py-env>
+
+<body>
+  <h1>Fourier Generator</h1>
+  <h3>Made by the Discount Devs</h3>
+  <br>
+  <div>Paste a list of coordinates, eg. <code>[[1, 2], [3, 4]]</code> below:</div>
+  <input type="text" id="coordinates" />
+  <div>Number of vectors</div>
+  <input type="number" id="vCount" value="21" />
+  <button id="submit-button" type="submit" pys-onClick="main">
+    Compute</button>
+  <button onclick="copyFromId('radii')">Copy Radii</button>
+  <button onclick="copyFromId('angles')">Copy Angles</button>
+  <br></br>
+  Radii:<br>
+  <code id="radii">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br><br>
+  Angles:<br>
+  <code id="angles">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br><br>
+  <code id="log">Log will appear here.</code><br><br>
+
+
+  <div id="hidden" style="display: none;">false</div>
+  <py-script src="generator.py"></py-script>
+  <script src="script.js"></script>
+</body>
+
+</html>
